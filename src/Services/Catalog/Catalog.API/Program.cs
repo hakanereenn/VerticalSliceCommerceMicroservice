@@ -2,6 +2,9 @@ using Carter;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 // Add services to the container
 builder.Services.AddCarter();
 builder.Services.AddMediatR(config =>
@@ -11,7 +14,14 @@ builder.Services.AddMediatR(config =>
 
 var app = builder.Build();
 
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 // Configure the HTTP request pipeline.
+app.UseHttpsRedirection();
 app.MapCarter();
 
 app.Run();
