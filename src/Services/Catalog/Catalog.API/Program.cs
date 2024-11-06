@@ -9,7 +9,18 @@ builder.Services.AddMediatR(config =>
 {
     config.RegisterServicesFromAssembly(typeof(Program).Assembly);
 });
-builder.Services.AddMarten(opt => {
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5050");
+        });
+});
+
+builder.Services.AddMarten(opt =>
+{
     opt.Connection(builder.Configuration.GetConnectionString("Database")!);
 }).UseLightweightSessions();
 
@@ -21,6 +32,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAllOrigins");
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
 app.MapCarter();

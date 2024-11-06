@@ -6,9 +6,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/bin/Debug/net8.0/<ProjeAdı>.dll",
+      "program": "/Users/hakaneren/Desktop/Global Repo/e_shop_microservice/src/Services/Catalog/Catalog.API/bin/Debug/net8.0/Catalog.API.dll",
       "args": [],
-      "cwd": "${workspaceFolder}",
+      "cwd": "/Users/hakaneren/Desktop/Global Repo/e_shop_microservice/src/Services/Catalog/Catalog.API",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",
