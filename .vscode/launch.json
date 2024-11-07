@@ -2,13 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": ".NET Core Launch (API)",
+      "name": ".NET Core Launch (Catalog.API)",
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "/Users/hakaneren/Desktop/Global Repo/e_shop_microservice/src/Services/Catalog/Catalog.API/bin/Debug/net8.0/Catalog.API.dll",
+      "program": "${workspaceFolder}/src/Services/Catalog/Catalog.API/bin/Debug/net8.0/Catalog.API.dll",
       "args": [],
-      "cwd": "/Users/hakaneren/Desktop/Global Repo/e_shop_microservice/src/Services/Catalog/Catalog.API",
+      "cwd": "${workspaceFolder}/src/Services/Catalog/Catalog.API",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",
