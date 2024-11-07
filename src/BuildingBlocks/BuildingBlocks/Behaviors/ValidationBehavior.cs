@@ -1,4 +1,3 @@
-using BuildingBlocks.CQRS;
 using FluentValidation;
 using MediatR;
 
