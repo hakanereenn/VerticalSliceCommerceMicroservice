@@ -2,10 +2,23 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build",
+      "label": "build-catalog",
       "command": "dotnet",
       "type": "process",
-      "args": ["build", "${workspaceFolder}/src/Services/Catalog/Catalog.API/Catalog.API.csproj"],
+      "args": [
+        "build",
+        "${workspaceFolder}/src/Services/Catalog/Catalog.API/Catalog.API.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "build-basket",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/Services/Basket/Basket.API/Basket.API.csproj"
+      ],
       "problemMatcher": "$msCompile"
     }
   ]
