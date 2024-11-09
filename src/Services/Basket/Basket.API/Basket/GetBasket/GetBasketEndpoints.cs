@@ -2,7 +2,7 @@
 
 // public record GetBasketRequest(string UserName);
 
-public record GetBasketResponse(Product Product);
+public record GetBasketResponse(ShoppingCart Cart);
 public class GetBasketEndPoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)

@@ -12,7 +12,7 @@ namespace Basket.API.Basket.StoreBasket
             RuleFor(x => x.Cart.UserName).NotEmpty().WithMessage("UserName is required");
         }
     }
-    internal class StoreBasketHandler(IDocumentSession session) : ICommandHandler<StoreBasketCommand, StoreBasketResult>
+    internal class StoreBasketHandler() : ICommandHandler<StoreBasketCommand, StoreBasketResult>
     {
         public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
         {

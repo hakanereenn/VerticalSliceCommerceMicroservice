@@ -10,7 +10,7 @@ public class GetBasketQueryValidator : AbstractValidator<GetBasketQuery>
         RuleFor(x => x.UserName).NotEmpty().WithMessage("User Name is required");
     }
 }
-internal class GetBasketQueryHandler(IDocumentSession session) : IQueryHandler<GetBasketQuery, GetBasketResult>
+internal class GetBasketQueryHandler() : IQueryHandler<GetBasketQuery, GetBasketResult>
 {
     public async Task<GetBasketResult> Handle(GetBasketQuery query, CancellationToken cancellationToken)
     {
