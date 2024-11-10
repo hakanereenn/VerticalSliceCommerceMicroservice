@@ -3,6 +3,8 @@ name: 'e-shop'
 services:
   catalogdb:
     image: postgres:14.8-alpine
-
+  basketdb:
+    image: postgres:14.8-alpine
 volumes:
   postgres_catalog:
+  postgres_basket:
