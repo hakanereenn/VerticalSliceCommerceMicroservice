@@ -5,6 +5,8 @@ services:
     image: postgres:14.8-alpine
   basketdb:
     image: postgres:14.8-alpine
+  distributedcache:
+    image: redis  
 volumes:
   postgres_catalog:
   postgres_basket:

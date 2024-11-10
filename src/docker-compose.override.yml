@@ -26,3 +26,9 @@ services:
       - '5434:5432'
     volumes:
       - postgres_basket:/var/lib/postgresql/data/ 
+  distributedcache:
+    container_name: distributedcache
+    platform: linux/arm64
+    restart: always
+    ports:
+      - "6380:6379"
