@@ -3,7 +3,6 @@ version: '3.4'
 services:
   catalogdb:
     container_name: catalogdb
-    platform: linux/arm64/v8
     restart: always
     environment:
       - POSTGRES_USER=postgres
@@ -15,7 +14,6 @@ services:
       - postgres_catalog:/var/lib/postgresql/data/ 
   basketdb:
     container_name: basketdb
-    platform: linux/arm64/v8
     restart: always
     environment:
       - POSTGRES_USER=postgres
@@ -26,9 +24,16 @@ services:
       - '5434:5432'
     volumes:
       - postgres_basket:/var/lib/postgresql/data/ 
+  orderdb:
+    container_name: orderdb
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=hKn12345678
+    restart: always
+    ports:
+      - "1434:1433"
   distributedcache:
     container_name: distributedcache
-    platform: linux/arm64
     restart: always
     ports:
       - "6380:6379"

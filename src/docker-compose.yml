@@ -6,7 +6,9 @@ services:
   basketdb:
     image: postgres:14.8-alpine
   distributedcache:
-    image: redis  
+    image: redis
+  orderdb:
+    image: mcr.microsoft.com/mssql/server
 volumes:
   postgres_catalog:
   postgres_basket:
