@@ -1,5 +1,7 @@
 using System.Reflection;
 using BuildingBlocks.Behaviors;
+using BuildingBlocks.Messaging;
+using BuildingBlocks.Messaging.MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.FeatureManagement;
@@ -19,8 +21,8 @@ public static class DependencyInjection
         });
         
         services.AddFeatureManagement();
-        
-        // services.AddMessageBroker(configuration, Assembly.GetExecutingAssembly());
+
+        services.AddMessageBroker(builderConfiguration, Assembly.GetExecutingAssembly());
 
         return services;
     }
