@@ -44,23 +44,29 @@
 
 ## 📍 Overview
 
-eshopmicroservice is an open-source solution for building scalable and resilient e-commerce applications. It leverages microservices architecture, Docker containers, and message queues to provide a robust platform for managing catalogs, orders, and user interactions. Ideal for developers and businesses seeking a flexible and maintainable e-commerce infrastructure.
+**VerticalSliceCommerceMicroservice** is an e-commerce application developed using modern microservice architectures and software design patterns. This project is based on the Vertical Slice Architecture approach, which treats each functionality as an independent, self-contained slice. Unlike traditional layered architectures, each feature is developed and managed as a completed unit.
 
+The project adopts the following modern software design patterns and approaches:
+
+- CQRS (Command Query Responsibility Segregation): Separates data reading (query) and writing (command) operations, improving system scalability and performance.
+
+- DDD (Domain-Driven Design): Developed with domain models and bounded contexts, focusing on business logic.
+
+- Onion Architecture: A layered structure where dependencies point inward, improving flexibility and testability.
+
+This project aims to demonstrate how microservices can be developed modularly and independently, while also showcasing the implementation of modern software engineering practices.
 ---
 
 ## 👾 Features
 
-|      | Feature         | Summary       |
+|      | **Feature**                       | **Description**                                                                                                                                       |
 | :--- | :---:           | :---          |
-| ⚙️  | **Architecture**  | <ul><li>Microservices architecture based on the provided dependencies and containerization with Docker.</li><li>Potential use of gRPC for communication between microservices, indicated by 'discount.proto' dependency.</li><li>Likely utilizes a message queue or event bus for asynchronous communication, inferred from 'BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj'.</li></ul> |
-| 🔩 | **Code Quality**  | <ul><li>Difficult to assess without code review. </li><li>Project structure and file naming conventions suggest potential adherence to coding standards.</li><li>Presence of 'dotnet-tools.json' suggests use of .NET tooling for code analysis and quality checks.</li></ul> |
-| 📄 | **Documentation** | <ul><li>Primary language is C# based on the provided information.</li><li>Variety of file types including '.yml', '.dcproj', '.csproj', '.json', and '.cs' indicate a mix of configuration, project files, and source code.</li><li>Limited documentation details available for a comprehensive analysis.</li></ul> |
-| 🔌 | **Integrations**  | <ul><li>Integration with Docker for containerization and deployment.</li><li>Potential integration with other microservices based on the 'discount.proto' dependency and communication patterns.</li><li>'basket.api.http' and 'ordering.api.http' suggest REST API integrations.</li></ul> |
-| 🧩 | **Modularity**    | <ul><li>Microservice architecture inherently promotes modularity with distinct services responsible for specific functionalities.</li><li>Project structure with multiple '.csproj' files suggests individual projects or modules within the e_shop ecosystem.</li></ul> |
-| 🧪 | **Testing**       | <ul><li>Difficult to assess testing practices without reviewing test code and coverage reports.</li><li>Presence of 'dotnet-tools.json' might indicate integration with .NET testing frameworks.</li></ul> |
-| ⚡️  | **Performance**   | <ul><li>Performance characteristics are unknown without benchmarking data or performance analysis.</li><li>Containerization with Docker can potentially improve performance through resource optimization and scaling.</li></ul> |
-| 🛡️ | **Security**      | <ul><li>Security measures are not explicitly mentioned in the provided details.</li><li>Best practices for secure coding, authentication, and authorization should be implemented based on industry standards.</li></ul> |
-| 📦 | **Dependencies**  | <ul><li>Utilizes NuGet package manager for .NET dependencies.</li><li>Docker dependency for containerization and deployment.</li><li>Specific dependencies like 'discount.proto' suggest use of gRPC for communication.</li></ul> |
+| ⚙️  | **Vertical Slice Architecture**    | Each functionality (feature) is treated as an independent slice. Each slice contains its own commands, queries, handlers, and API endpoints. This simplifies project growth and management. |
+| ⚙️  | **CQRS Pattern**                   | Command and Query operations are separated. Commands manage data changes (create, update, delete), while Queries handle data reading operations. This separation improves performance and simplifies complex business logic management. |
+| ⚙️  | **Domain-Driven Design (DDD)**     | Business logic is centered around domain models and bounded contexts. Rich domain models are created using aggregate roots, entities, and value objects. Domain events are used to propagate system changes. |
+| ⚙️  | **Onion Architecture**             | A layered architecture where dependencies point inward. The Core layer contains domain models and business rules. The Infrastructure layer handles database access and communication with external services. The API layer manages HTTP endpoints and user interactions. |
+| ⚙️  | **Modular Microservice Structure** | Each microservice works independently. Service communication occurs through REST APIs or message queues. This structure enhances scalability and maintainability. |
+| ⚙️  | **Testability and Flexibility**    | The system is made more reliable through unit and integration tests. Dependency Injection (DI) ensures easy replacement and testing of components. |
 
 ---
 
